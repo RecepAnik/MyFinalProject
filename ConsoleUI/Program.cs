@@ -17,7 +17,7 @@ namespace ConsoleUI
                 Console.WriteLine(product.ProdcutName);
 
             }
-            Console.WriteLine("---");
+            Console.WriteLine("*------*");
 
 
             foreach (var product in productManager.GetAll())
