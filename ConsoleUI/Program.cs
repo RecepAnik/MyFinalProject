@@ -46,10 +46,7 @@ namespace ConsoleUI
 
 
 
-            foreach (var product in productManager.GetProductDetails().Data)
-            { 
-                Console.WriteLine(product.ProductName+ " / "+ product.CategoryName) ;
-            }
+      
         }
     }
 }
