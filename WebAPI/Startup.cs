@@ -1,6 +1,6 @@
 using System.Linq;
 using System.Threading.Tasks;
-
+using Core.DependencyResolvers;
 using Core.Extensions;
 using Core.Utilities.IoC;
 using Core.Utilities.Security.Encryption;
@@ -39,7 +39,7 @@ namespace WebAPI
             //services.AddSingleton<IProductService,ProductManager>();
             //services.AddSingleton<IProductDal, EfProductDal>();
 
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+         
 
 
             var tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
@@ -60,10 +60,10 @@ namespace WebAPI
                 });
 
 
-
+            services.AddDependencyResolvers(new ICoreModule[] { 
+            new CoreModule()
+            });
       
-
-
 
         }
 

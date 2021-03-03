@@ -8,14 +8,9 @@ using System.Text;
 
 namespace Business.Concrete
 {
-    
     public class CategoryManager : ICategoryService
     {
         ICategoryDal _categoryDal;
-
-        public CategoryManager()
-        {
-        }
 
         public CategoryManager(ICategoryDal categoryDal)
         {
@@ -24,22 +19,14 @@ namespace Business.Concrete
 
         public IDataResult<List<Category>> GetAll()
         {
-            return new SuccessDataResult<List<Category>> ( _categoryDal.GetAll());
+            //İş kodları
+            return new SuccessDataResult<List<Category>>(_categoryDal.GetAll());
         }
 
-        public IDataResult<Category >GetById(int categoryId)
+        //Select * from Categories where CategoryId = 3
+        public IDataResult<Category> GetById(int categoryId)
         {
             return new SuccessDataResult<Category>(_categoryDal.Get(c => c.CategoryId == categoryId));
-        }
-
-        IDataResult<List<Category>> ICategoryService.GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        IDataResult<Category> ICategoryService.GetById(int categoryId)
-        {
-            throw new NotImplementedException();
         }
     }
 }
