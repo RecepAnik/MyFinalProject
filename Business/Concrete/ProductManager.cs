@@ -32,7 +32,7 @@ namespace Business.Concrete
         }
 
         
-       // [SecuredOperation("product.add,admin")]
+        [SecuredOperation("product.add,admin")]
         [ValidationAspect(typeof(ProductValidator))]
         [CacheRemoveAspect("IProductSercvice.Get")]
         public IResult Add(Product product)
@@ -49,6 +49,7 @@ namespace Business.Concrete
             }
 
             _productDal.Add(product);
+
 
             return new SuccessResult(Messages.ProductAdded);
 

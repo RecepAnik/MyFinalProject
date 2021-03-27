@@ -68,16 +68,4 @@ namespace Business.Concrete
             return new SuccessDataResult<AccessToken>(accessToken, "Token oluşturuldu");
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
 }
